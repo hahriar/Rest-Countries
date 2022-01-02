@@ -1,14 +1,16 @@
 const loadCountries = () => {
-    fetch('https://restcountries.com/v3.1/all')
+    fetch('https://restcountries.com/v2/all')
     .then(res => res.json())
     .then(data => displayCountries(data))
 }
 
 const displayCountries = countries => {
     console.log(countries[0]);
+    const container = document.getElementById('countries');
     const countryHTML = countries.map(country => 
         getcountryHTML(country));
-        console.log(countryHTML[0]);
+    container.innerHTML = countryHTML;
+        console.log(countryHTML);
 }
 
 const getcountryHTML = country => {
