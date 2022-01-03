@@ -9,7 +9,7 @@ const displayCountries = countries => {
     const container = document.getElementById('countries');
     const countryHTML = countries.map(country => 
         getcountryHTML(country));
-    container.innerHTML = countryHTML;
+    container.innerHTML = countryHTML.join('');
         console.log(countryHTML);
 }
 
