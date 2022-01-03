@@ -1,5 +1,5 @@
 const loadCountries = () => {
-    fetch('https://restcountries.com/v3.1/all')
+    fetch('https://restcountries.com/v2/all')
     .then(res => res.json())
     .then(data => displayCountries(data))
 }
@@ -16,9 +16,9 @@ const displayCountries = countries => {
 const getcountryHTML = country => {
     return `
     <div>
-        <h2>${country.name.common}</h2>
+        <h2>${country.name}</h2>
         <p>Capital: ${country.capital}</p>
-        <img> src="${country.flag}"</img>
+        <img src="${country.flag}">
     </div>
     `
 }
